@@ -1,0 +1,10 @@
+.weather-container {
+    grid-row: 2 / 3;
+    grid-column: 2 / 4;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 2%;
+    background-color: #D3D0C1;
+    border-top: 3px solid #444545;
+}
