@@ -11,7 +11,7 @@ class Pool extends React.Component {
         this.getData = this.getData.bind(this);
     }
     getData() {
-        fetch('http://localhost:3002/pool')
+        fetch('https://damp-everglades-29730.herokuapp.com/pool')
         .then(response => response.text())
         .then(data => {
             console.log(data);

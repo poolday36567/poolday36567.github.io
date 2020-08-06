@@ -15,7 +15,7 @@ class WeatherContainer extends React.Component {
     }
     getData () {
         if (this.state.counter < 1) {
-            fetch('http://localhost:3002/weather')
+            fetch('https://damp-everglades-29730.herokuapp.com/weather')
             .then(response => response.json())
             .then(data => {
                 this.setState({
