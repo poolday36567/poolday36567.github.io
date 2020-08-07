@@ -7,16 +7,43 @@ class WeatherContainer extends React.Component {
         super(props);
         this.state = {
             api: [],
-            counter: 0
+            counter: 0,
+            lat: 38.992460,
+            lon: -77.099580,
         }
         // Bindings ensure calling the method doesn't point to 'null'
         this.getData = this.getData.bind(this);
-        this.convertIdToWeather = this.convertIdToWeather.bind(this);
+        this.success = this.success.bind(this);
         this.splitToDigit = this.splitToDigit.bind(this);
+        this.getUserLocation = this.getUserLocation.bind(this);
+        this.convertIdToWeather = this.convertIdToWeather.bind(this);
+    }
+    success(pos) {
+        var crd = pos.coords;
+        this.setState({
+            lat: crd.latitude,
+            lon: crd.longitude
+        });
+    }
+    getUserLocation () {
+        let options = {
+            enableHighAccuracy: true,
+            timeout: 5000,
+            maximumAge: 0
+        };
+          
+        function error(err) {
+            console.warn(`ERROR(${err.code}): ${err.message}`);
+        }
+          
+        navigator.geolocation.getCurrentPosition(this.success, error, options);
     }
     getData () {
+        this.getUserLocation();
         if (this.state.counter < 1) {
-            fetch('https://damp-everglades-29730.herokuapp.com/weather')
+            console.log(this.state.lat)
+            console.log(this.state.lon)
+            fetch(`https://damp-everglades-29730.herokuapp.com/weather?lat=${this.state.lat}&lon=${this.state.lon}`)
             .then(response => response.json())
             .then(data => {
                 this.setState({
