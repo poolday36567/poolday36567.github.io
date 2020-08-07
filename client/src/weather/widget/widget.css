@@ -22,5 +22,11 @@
     justify-content: center;
     flex-direction: column;
     border-bottom: 3px solid #444545;
-    font-size: 1vw;
+    font-size: 1vmax;
+}
+
+@media screen and (orientation: portrait) {
+    .top, .bottom {
+        border-bottom: 1px solid #444545;
+    }
 }

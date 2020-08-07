@@ -9,6 +9,7 @@ class WeatherContainer extends React.Component {
             api: [],
             counter: 0
         }
+        // Bindings ensure calling the method doesn't point to 'null'
         this.getData = this.getData.bind(this);
         this.convertIdToWeather = this.convertIdToWeather.bind(this);
         this.splitToDigit = this.splitToDigit.bind(this);
@@ -25,6 +26,7 @@ class WeatherContainer extends React.Component {
             });
         }
     }
+    // Technical debt ... I don't fully understand how it works
     splitToDigit = n => {
         return [...n + ''].map(Number)
     }

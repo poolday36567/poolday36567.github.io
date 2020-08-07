@@ -8,3 +8,10 @@
     background-color: #D3D0C1;
     border-top: 3px solid #444545;
 }
+@media screen and (orientation: portrait) {
+    .weather-container {
+        grid-row: 3 / 4;
+        grid-column: 1 / 2;
+        border-top: 1px solid #444545;
+    }
+}

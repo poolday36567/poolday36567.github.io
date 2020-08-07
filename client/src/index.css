@@ -26,3 +26,17 @@ code {
 		overflow-x: hidden;
 	}
 }
+@media screen and (orientation: portrait) {
+	html {
+		background-color: #444545;
+	}
+	#root {
+		height: 120vh;
+		width: 100vw;
+	}
+	#container {
+		display: grid;
+		grid-template-rows: 15vh 20vh 65vh 20vh;
+		grid-template-columns: 100vw;
+	}
+}

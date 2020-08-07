@@ -14,3 +14,9 @@
     );
     border-bottom: 3px solid #444545;
 }
+@media screen and (orientation: portrait) {
+    .pool {
+        grid-row: 2 / 3;
+        grid-column: 1 / 2;
+    }
+}
