@@ -41,8 +41,6 @@ class WeatherContainer extends React.Component {
     getData () {
         this.getUserLocation();
         if (this.state.counter < 1) {
-            console.log(this.state.lat)
-            console.log(this.state.lon)
             fetch(`https://damp-everglades-29730.herokuapp.com/weather?lat=${this.state.lat}&lon=${this.state.lon}`)
             .then(response => response.json())
             .then(data => {
